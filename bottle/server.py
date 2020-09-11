@@ -21,7 +21,7 @@ def search():
     results = []
     for char in chars:
         name = unicodedata.name(char)
-        results.append('char': char, 'name': name})
+        results.append({'char': char, 'name': name})
     return json.dumps(results).encode('UTF-8')
 
 
