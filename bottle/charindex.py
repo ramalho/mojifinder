@@ -1,23 +1,23 @@
 """
-``Index`` implements an inverted index mapping words to sets of Unicode
+``InvertedIndex`` implements an inverted index mapping words to sets of Unicode
 characters which contain that word in their names. For example::
 
-    >>> i = InvertedIndex(32, 128)
-    >>> sorted(i.index['SIGN'])
+    >>> ii = InvertedIndex(32, 128)
+    >>> sorted(ii.index['SIGN'])
     ['#', '$', '%', '+', '<', '=', '>']
-    >>> sorted(str(c) for c in i.index['DIGIT'])
+    >>> sorted(str(c) for c in ii.index['DIGIT'])
     ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    >>> i.index['DIGIT'] & i.index['EIGHT']
+    >>> ii.index['DIGIT'] & ii.index['EIGHT']
     {'8'}
-    >>> i.search('digit')
+    >>> ii.search('digit')
     ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    >>> i.search('eight digit')
+    >>> ii.search('eight digit')
     ['8']
-    >>> i.search('a letter')
+    >>> ii.search('a letter')
     ['A', 'a']
-    >>> i.search('a letter capital')
+    >>> ii.search('a letter capital')
     ['A']
-    >>> i.search('borogove')
+    >>> ii.search('borogove')
     []
 
 """
