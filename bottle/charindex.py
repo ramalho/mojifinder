@@ -1,6 +1,7 @@
 """
-``InvertedIndex`` implements an inverted index mapping words to sets of Unicode
-characters which contain that word in their names. For example::
+``InvertedIndex`` implements an inverted index mapping each word to
+a sets of Unicode characters which contain that word in their names.
+For example::
 
     >>> ii = InvertedIndex(32, 128)
     >>> sorted(ii.index['SIGN'])
